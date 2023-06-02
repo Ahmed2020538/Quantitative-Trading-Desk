@@ -132,13 +132,19 @@ df_netflow = pd.DataFrame([netFlow_Array],columns = ["NWTFLOW","Date","Retail","
 print(total_Array)
 
 
+y_Path ="Y:/Asset Management-Data science/PharosQuantitativeTeam/TradesComposition/Trading_Composition_LastUpdate/"
 #path = 'Y:/Asset Management-Data science/EGIDTradingComposition/'
-path1 = "E:/Repos/WORK/Daily_Tasks/Trading_Compossions/TradesComposition/"
+ahmad_path = "E:/Repos/WORK/Daily_Tasks/Trading_Compossions/TradesComposition/"
+new_path   ="Y:/Asset Management-Data science/Asset Management-Data science/Quantitative Trading Repo/Data-Filies/Trading-Composition-data/"
+GithubRepo_path   ="Y:/Asset Management-Data science/PharosQuantitativeTeam/Quantitative-Trading-Desk/Data-Base/Trading-Composition/Trading_Composition_LastUpdate/"
 #appending the result to trading composition  csv file
+paths = [y_Path , ahmad_path, GithubRepo_path]
+for path in paths :
+	df_buy.to_csv(path+ 'BuyTradingCompositionEGX.csv', mode='a',header=False,index=False)
+	df_sell.to_csv(path+ 'SellTradingCompositionEGX.csv', mode='a',header=False,index=False)
+	df_total.to_csv(path+ 'TotalTradingCompositionEGX.csv', mode='a',header=False,index=False)
+	df_netflow.to_csv(path+ 'NetFlowTradingCompositionEGX.csv', mode='a',header=False,index=False)
+	print(path)
+	print("=====================")
 
-df_buy.to_csv(path1+ 'BuyTradingCompositionEGX.csv', mode='a',header=False,index=False)
-df_sell.to_csv(path1+ 'SellTradingCompositionEGX.csv', mode='a',header=False,index=False)
-df_total.to_csv(path1+ 'TotalTradingCompositionEGX.csv', mode='a',header=False,index=False)
-df_netflow.to_csv(path1+ 'NetFlowTradingCompositionEGX.csv', mode='a',header=False,index=False)
-
-
+print("The Script run well and apenned all columns over all paths,  Thanks")
