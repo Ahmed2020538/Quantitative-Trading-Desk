@@ -1,0 +1,7 @@
+1 : To Solve Conflusion of Package of python ::
+	
+	- pip install --upgrade pip --user
+	- python -m pip install Package
+2 : To Identify all Pathes on C Partition ::
+	
+	- echo %PATH%
